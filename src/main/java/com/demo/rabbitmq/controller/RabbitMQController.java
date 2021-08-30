@@ -2,6 +2,8 @@ package com.demo.rabbitmq.controller;
 
 import com.demo.rabbitmq.beans.ResObj;
 import com.demo.rabbitmq.beans.DemoMessage;
+import com.demo.rabbitmq.deadletter.constant.DeadLetterConstant;
+import com.demo.rabbitmq.deadletter.producer.DeadLetterProducer;
 import com.demo.rabbitmq.direct.constant.DirectConstant;
 import com.demo.rabbitmq.direct.producer.DirectProducer;
 import com.demo.rabbitmq.fanout.constant.FanoutConstant;
@@ -40,6 +42,9 @@ public class RabbitMQController {
 
     @Autowired
     private TopicProducer topicProducer;
+
+    @Autowired
+    private DeadLetterProducer deadLetterProducer;
 
     /**
      * 描述：简单模式
@@ -80,7 +85,7 @@ public class RabbitMQController {
     }
 
     /**
-     * 描述：新增
+     * 描述：直接模式
      * @author mao2080@sina.com
      * @created 2018/9/1 20:17
      * @return ResObj
@@ -101,7 +106,7 @@ public class RabbitMQController {
     }
 
     /**
-     * 描述：新增
+     * 描述：广播模式
      * @author mao2080@sina.com
      * @created 2018/9/1 20:17
      * @return ResObj
@@ -120,7 +125,7 @@ public class RabbitMQController {
     }
 
     /**
-     * 描述：新增
+     * 描述：主题模式
      * @author mao2080@sina.com
      * @created 2018/9/1 20:17
      * @return ResObj
@@ -138,5 +143,26 @@ public class RabbitMQController {
             return new ResObj(e);
         }
     }
+
+
+
+    /**
+     * 描述：死信队列
+     * @author mao2080@sina.com
+     * @created 2018/9/1 20:17
+     * @return ResObj
+     */
+    @RequestMapping(value = "/dead-letter")
+    @ResponseBody
+    public ResObj deadLetter() {
+        try {
+            this.deadLetterProducer.sendMessage(new DemoMessage(DeadLetterConstant.MODE));
+            return new ResObj();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResObj(e);
+        }
+    }
+
 
 }

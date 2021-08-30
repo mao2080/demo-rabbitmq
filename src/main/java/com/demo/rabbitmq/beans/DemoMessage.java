@@ -21,6 +21,11 @@ public class DemoMessage implements Serializable {
 
     private String createTime;
 
+    public DemoMessage(String mode) {
+        this.mode = mode;
+        this.createTime = CommonUtil.getNowTime();
+    }
+
     public DemoMessage(String mode, String exchangeName) {
         this.mode = mode;
         this.exchangeName = exchangeName;

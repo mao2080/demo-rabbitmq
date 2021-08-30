@@ -16,8 +16,10 @@ public class RabbitMQApplication {
         System.out.println("http://localhost:8080/rabbitMQController/direct");
         System.out.println("http://localhost:8080/rabbitMQController/fanout");
         System.out.println("http://localhost:8080/rabbitMQController/topic");
+        System.out.println("http://localhost:8080/rabbitMQController/dead-letter");
         System.out.println("https://www.cnblogs.com/linyufeng/p/9885645.html");
         System.out.println("https://www.cnblogs.com/liuyingke/p/13294517.html");
+        System.out.println("https://blog.csdn.net/shishishi777/article/details/99879419");
     }
 
 }
