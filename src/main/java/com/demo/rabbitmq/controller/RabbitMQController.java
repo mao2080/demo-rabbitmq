@@ -1,15 +1,15 @@
 package com.demo.rabbitmq.controller;
 
-import com.demo.rabbitmq.beans.ResObj;
 import com.demo.rabbitmq.beans.DemoMessage;
+import com.demo.rabbitmq.beans.ResObj;
 import com.demo.rabbitmq.deadletter.constant.DeadLetterConstant;
 import com.demo.rabbitmq.deadletter.producer.DeadLetterProducer;
-import com.demo.rabbitmq.direct.constant.DirectConstant;
-import com.demo.rabbitmq.direct.producer.DirectProducer;
-import com.demo.rabbitmq.fanout.constant.FanoutConstant;
 import com.demo.rabbitmq.fanout.producer.FanoutProducer;
 import com.demo.rabbitmq.sample.constant.SampleConstant;
 import com.demo.rabbitmq.sample.producer.SampleProducer;
+import com.demo.rabbitmq.direct.constant.DirectConstant;
+import com.demo.rabbitmq.direct.producer.DirectProducer;
+import com.demo.rabbitmq.fanout.constant.FanoutConstant;
 import com.demo.rabbitmq.topic.constant.TopicConstant;
 import com.demo.rabbitmq.topic.producer.TopicProducer;
 import com.demo.rabbitmq.work.constant.WorkConstant;

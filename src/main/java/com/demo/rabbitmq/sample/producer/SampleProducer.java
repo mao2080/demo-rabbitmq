@@ -1,7 +1,7 @@
 package com.demo.rabbitmq.sample.producer;
 
-import com.demo.rabbitmq.beans.DemoMessage;
 import com.demo.rabbitmq.sample.constant.SampleConstant;
+import com.demo.rabbitmq.beans.DemoMessage;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
